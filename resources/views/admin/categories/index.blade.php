@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container my-5">
+
+    <a href="{{ url('admin/categories/create') }}" class=" btn btn-primary mb-2"><i class="fas fa-laptop"></i>اضافة صنف</a>
     <h1 class="text-center mb-4">جميع الأصناف</h1>
 
 

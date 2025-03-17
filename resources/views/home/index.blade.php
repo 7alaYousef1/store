@@ -64,6 +64,9 @@
 
 <div class="container marketing">
 
+
+   
+
     <!-- Three columns of text below the carousel -->
     <div class="row">
         @foreach ($products as $product )
@@ -81,21 +84,6 @@
 
 
     </div><!-- /.row -->
-    <div class="col-4">
-        <div class="d-flex align-items-center mb-2">
-
-            <select name="column" id="" class="form-select w-50">
-
-                <option value="{{$category_name->id}}">{{$category_name->name}}</option>
-                @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-                
-            </select>
-
-        </div>
-        <div class="col-1"><button class="btn btn-primary">إذهب</button></div>
-    </div>
 
 
 

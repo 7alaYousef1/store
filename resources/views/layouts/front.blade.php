@@ -117,6 +117,14 @@
         <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">سياسة الخصوصية</a> &middot; <a href="#">شروط الاستخدام</a></p>
     </footer>
 
+
+    <script>
+        document.getElementById("category-filter").addEventListener("change", function() {
+            let categoryId = this.value;
+            let url = categoryId ? `?category_id=${categoryId}` : `?category_id=`;
+            window.location.href = url;
+        });
+    </script>
     <script src="{{ asset('assets/dist/js/bootstrap.bundle.min.js') }}"></script>
 
 

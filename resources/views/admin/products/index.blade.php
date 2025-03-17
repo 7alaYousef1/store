@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container my-5">
+
+    <a href="{{ url('admin/products/create') }}" class=" btn btn-primary mb-2"><i class="fas fa-laptop"></i>اضافة منتج جديد</a>
     <h1 class="text-center mb-4">جميع المنتجات</h1>
 
 

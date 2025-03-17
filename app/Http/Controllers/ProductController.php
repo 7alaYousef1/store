@@ -9,9 +9,27 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index() {
+        
         $products = Product::all();
+
+
         return view('admin.products.index', compact('products'));
     }
+
+    // public function index(Request $request)
+    // {
+    //     $categoryId = $request->query('category_id');
+
+    //     if ($categoryId) {
+    //         $products = Product::where('category_id', $categoryId)->get();
+    //     } else {
+    //         $products = Product::all();
+    //     }
+
+    //     $categories = Category::all();
+
+    //     return view('admin.products.index', compact('products', 'categories'));
+    // }
     public function create(Request $request) {
        $categories = Category::all();
         return view('admin.products.create',compact('categories'));
