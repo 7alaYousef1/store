@@ -14,9 +14,9 @@
 
 
         </tr>
-        @foreach ($categories as $category)
+        @foreach ($categories as $key=> $category)
         <tr>
-            <td>{{ $category->id }}</td>
+            <td>{{ ++$key }}</td>
             <td>{{ $category->name }}</td>
 
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Admin\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
     public function index(){
+        
         $categories = Category::all();
         return view('admin.categories.index',compact('categories'));
     }

@@ -9,19 +9,21 @@
     <table class="table table-bordered table-hover table-striped">
         <tr class="table-dark">
             <th>#</th>
+            <th>رقم المنتج</th>
             <th>اسم المنتج</th>
             <th>الوصف</th>
             <th>السعر</th>
             <th>الكمية</th>
+
             <th>الأحداث</th>
 
         </tr>
-        @foreach ($products as $product)
+        @foreach ($products as $key=> $product)
         <tr>
-            <td>{{ $product->id }}</td>
-
+            <th scope="row">{{ ++$key  }}</th>
+            <td>المنتج رقم {{ $loop->iteration }}</td>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->description }}</td>
+            <td>{{ $product->category->name }}</td>
             <th>${{ $product->price }}</th>
             <td>{{ $product->quantity }}</td>
 
@@ -34,6 +36,6 @@
 
 
     </table>
-
+    {{$products->links()}}
 </div>
 @endsection

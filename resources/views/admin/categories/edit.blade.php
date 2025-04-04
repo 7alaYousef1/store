@@ -7,7 +7,7 @@
         @csrf
         @method('PATCH')
         <div class="mb-3">
-            <label>إسم المنتج</label>
+            <label>اسم الصنف</label>
             <input type="text" name="name" value="{{ $category->name }}" class="form-control @error('name') is-invalid @enderror">
             @error('name')
             <small class="invaled-feedback">{{ $message }}</small>

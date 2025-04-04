@@ -2,22 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Admin\Category;
+use App\Models\Admin\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+   
     public function index() {
+
+        // $products = Product::all();
         
-        $products = Product::all();
-
-
+        $products = Product::where('category_id',Auth::id())->orderBy('created_at','desc')->paginate(2);
+        // $products = Product::paginate(5);
         return view('admin.products.index', compact('products'));
     }
 
     // public function index(Request $request)
-    // {
+    // { 
     //     $categoryId = $request->query('category_id');
 
     //     if ($categoryId) {
